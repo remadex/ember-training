@@ -1,3 +1,4 @@
+{{! template-lint-disable}}
 <div class="rr-sidebar">
     <ul class="rr-list">
         {{#each model as |band|}}
@@ -11,11 +12,18 @@
         {{/each}}
     </ul>
     <div class="rr-new-label">
-        {{#if isAddingBand}} {{input type="text" class="rr.input" placeHolder="New Band"}}
-        <button class="rr-action-button">Add</button>
-        <span class="rr-cancel-icon" onclick={{action "cancelAddBand"}}>{{fa-icon "times"}} </span>
+        {{#if isAddingBand}}
+        <form class="rr-inline-form" onsubmit={{action "saveBand"}}>
+            {{input type="text" class="rr.input" placeHolder="New Band" value=newBandName}}
+            <button class="rr-action-button" disabled={{isAddButtonDisabled}}>
+                Add
+            </button>
+            <span class="rr-cancel-icon" onclick={{action "cancelAddBand"}}>
+                {{fa-icon "times"}}
+            </span>
+        </form>
         {{else}}
-        <label onClick={{action "addBand"}}>{{fa-icon "plus"}}
+        <label onclick={{action "addBand"}}>{{fa-icon "plus"}}
             <span class="mi11">Add new band</span>
         </label>
         {{/if}}
