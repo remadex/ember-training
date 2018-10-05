@@ -1,26 +1,23 @@
-{{! template-lint-disable}}
 <ul class="rr-list">
-    {{#each model.songs as |song|}}
+  {{#each model.songs as |song|}}
     <li class="rr-list-item">
-        {{song.title}} {{star-rating rating=song.rating item=song}}
-        <!--<span class="ranking fr">{{song.rating}}</span>-->
+      {{song.title}} 
+      {{star-rating class="fr" rating=song.rating item=song}}
     </li>
-    {{/each}}
+  {{/each}}
 </ul>
 <div class="rr-new-label">
     {{#if isAddingSong}}
-    <form class="rr-inline-form" onsubmit={{action "saveSong"}}>
-        {{input type="text" class="rr.input" placeHolder="New Song" value=newBandSong}}
-        <button class="rr-action-button" disabled={{isAddButtonDisabled}}>
-            Add
+      <form class="rr-inline-form" onsubmit={{action "saveSong"}}>
+        {{input type="text" class="rr.input" placeHolder="New Song" value=newSongTitle}}
+        <button 
+          class="rr-action-button" 
+          disabled={{isAddButtonDisabled}}>
+        Add
         </button>
-        <span class="rr-cancel-icon" onclick={{action "cancelAddSong"}}>
-            {{fa-icon "times"}}
-        </span>
-    </form>
+        <span class="rr-cancel-icon" onclick={{action "cancelAddSong"}}>{{fa-icon "times"}}</span>
+      </form>
     {{else}}
-    <label onclick={{action "addSong"}}>{{fa-icon "plus"}}
-        <span class="mi11">Add new song</span>
-    </label>
+      <label onclick={{action "addSong"}} >{{fa-icon "plus"}} <span class="m11">Add new song</span></label>
     {{/if}}
-</div>
+  </div>

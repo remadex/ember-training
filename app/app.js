@@ -6,7 +6,7 @@ import config from './config/environment';
 const App = Application.extend({
   modulePrefix: config.modulePrefix,
   podModulePrefix: config.podModulePrefix,
-  Resolver //Dire sur quel vue on est
+  Resolver
 });
 
 loadInitializers(App, config.modulePrefix);

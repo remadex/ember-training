@@ -152,14 +152,14 @@
 }
 .rr-header-link > .rr-app-title{
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom:0;
 }
 .rr-panel {
-    padding: 1rem;
+    padding:1rem;
     border: .125rem solid;
-    border-radius: .125rem;
+    border-radius:.125rem;
 }
 .rr-textarea{
-    width: 100%;
-    padding: .5rem;
+    width:100%;
+    padding:.5rem;
 }

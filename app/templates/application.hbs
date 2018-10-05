@@ -1,29 +1,14 @@
-{{!--
-<h2>Techno songs application</h2>
-{{outlet}}
-<ul>
-    {{#each model as |song|}}
-    <li>{{song.title}} by {{song.band}} - {{song.rating}}</li>
-    {{/each}}
-</ul> --}}
 <div class="rr-container">
-    <div class="rr-page-header">
-        <h1 class="rr-app-title">Rock & Roll <small class="rr-subtitle">with Ember</small></h1>
-    </div>
-    {{!--
-    <nav class="rr-navbar" role="navigation">
-        <ul class="rr-nav">
-            <li class="rr-navbar-item">{{link-to "Songs" "songs"}}</li>
-            <li class="rr-navbar-item">{{link-to "Bands" "bands"}}</li>
-        </ul>
-    </nav> --}} {{!--
-    <div class="rr-main-content">
-        <ul class="list pa0 ma0">
-            {{#each model as |song|}}
-            <li>
-                {{song.title}} by <em>{{song.band}}</em>
-                <span class="ranking fr">{{song.rating}}</span>
-            </li>
-            {{/each}}
-        </ul> --}} {{outlet}}
-    </div>
+  <div class="rr-page-header">
+    <h1 class="rr-app-title"> Rock & Roll<small class="rr-subtitle"> with Ember</small></h1>
+  </div>
+  <div class="rr-main-content">
+    {{!-- <nav class="rr-navbar" role="navigation">
+      <ul class="rr-nav">
+        <li class="rr-navbar-item">{{link-to "Songs" "songs"}}</li>
+        <li class="rr-navbar-item">{{link-to "Bands" "bands"}}</li>
+      </ul>
+    </nav> --}}
+    {{outlet}}
+  </div>
+</div>
